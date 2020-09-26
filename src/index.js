@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import App from './App'
-import { createstore, applyMiddleware } from 'redux'
+
 import { Provider } from 'react-redux'
-import catsReducer from '../reducers/CatsReducer'
+import { createstore, applyMiddleware } from 'redux'
 import thunk from "redux-thunk";
+import catsReducer from '../reducers/CatsReducer'
 
 
 let store = createstore(catsReducer, applyMiddleware(thunk))
