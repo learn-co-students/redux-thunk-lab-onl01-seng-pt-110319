@@ -9,6 +9,14 @@ class App extends Component {
     console.log(this.props)
     this.props.fetchCats()
   }
+
+  handleLoading = () => {
+    if (this.props.loading) {
+      return <div>Almost ready...</div>
+    } else {
+      return <CatList catPics={this.props.catPics} />
+    }
+  }
   
   render() {
     console.log(this.props.catPics)
@@ -16,7 +24,7 @@ class App extends Component {
     return (
       <div className={"app"}>
         <h1>CatBook</h1>
-        <CatList catPics={this.props.catPics} />
+        {this.handleLoading()}
       </div>
     );
   }
